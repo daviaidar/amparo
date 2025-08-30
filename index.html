@@ -47,18 +47,19 @@
   </section>
 
   <!-- Serviços -->
-  <section id="servicos" class="servicos">
-    <h2>Serviços sob medida</h2>
-    <p>Pensados no bem-estar físico, emocional e mental do idoso e de toda a família.</p>
-    <div class="grid">
-      <div class="card">🛏️ Banho e higiene</div>
-      <div class="card">💊 Administração de medicamentos</div>
-      <div class="card">👩‍⚕️ Acompanhamento médico</div>
-      <div class="card">🍲 Auxílio na alimentação</div>
-      <div class="card">🏃‍♂️ Exercícios físicos leves</div>
-      <div class="card">🚗 Companhia em consultas</div>
-    </div>
-  </section>
+ <section id="servicos" class="servicos">
+  <h2>Serviços sob medida</h2>
+  <p>Pensados no bem-estar físico, emocional e mental do idoso e de toda a família.</p>
+  <div class="grid">
+    <div class="card animar">🛏️ Banho e higiene</div>
+    <div class="card animar">💊 Administração de medicamentos</div>
+    <div class="card animar">👩‍⚕️ Acompanhamento médico</div>
+    <div class="card animar">🍲 Auxílio na alimentação</div>
+    <div class="card animar">🏃‍♂️ Exercícios físicos leves</div>
+    <div class="card animar">🚗 Companhia em consultas</div>
+  </div>
+</section>
+
 <!-- Contato -->
  <section id="contato" class="contato">
   <div class="container">
@@ -110,6 +111,21 @@
     // Abrir no WhatsApp
     window.open(`https://wa.me/${+5517997449017}?text=${texto}`, "_blank");
   });
+    // Animação nos cards de serviços
+  const elementos = document.querySelectorAll('.animar');
+
+  function animarScroll() {
+    const windowTop = window.innerHeight * 0.85;
+    elementos.forEach(el => {
+      const elementoTop = el.getBoundingClientRect().top;
+      if (elementoTop < windowTop) {
+        el.classList.add('visivel');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', animarScroll);
+  animarScroll(); // roda uma vez no carregamento
 </script>
 
 </body>
